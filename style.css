@@ -1,0 +1,152 @@
+:root{
+    --accent:#596D48;
+    --accent-lighter:#627451;
+    --bg:#eeeeee;
+    --highlighted:white;
+    font-family: sans-serif;
+    font-size: 50px;
+    --shadow-color: hsl(0, 0%, 0%,0.25);;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.gridContainer{
+    display: grid;
+    grid-template-columns: 4fr 6fr;
+    background-color: var(--bg);
+    height: 100vh;
+}
+
+.hero{
+    background-image: url(images/simon-lee-IEgvy4o3byM-unsplash.jpg);
+    background-size: cover;
+}
+
+.hero h1{
+    color: white;
+    font-family: Helvetica, sans-serif;
+    font-size: 5rem;
+    text-align: center;
+    background-color: hsl(0, 0%, 0%,0.5);
+    margin-top: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero h1::before{
+    content:"";
+    background-image: url(images/odin_logo.png);
+    display: inline-block;
+    width: 1.5em; 
+    height: 2em;
+    background-size: contain;
+}
+
+.rightSide > *{
+    margin-inline: 3rem 7rem;
+    margin-block: 1em;
+}
+
+.rightSide{
+    align-self: center;
+}
+
+.highlighted{
+    background-color: var(--highlighted);
+    margin-inline: 0;
+    padding-block: 0.5rem;
+    box-shadow: 0 5px 15px var(--shadow-color);
+
+}
+
+.highlighted>*{
+    margin-inline: 3rem 15%;
+    margin-block: 1.5rem;
+}
+
+form {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 2em;
+    column-gap: 1em;
+}
+
+label{
+    text-transform: uppercase;
+    font-size: 50px;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+    color: hsl(0, 0%, 26%);
+}
+
+label input{
+    margin-top: 0.25em;
+    display: block;
+    width: 35ch;
+    padding: 0.25em;
+    font-size: 50px;
+    border-radius: 5px;
+    border: 2px solid #E5E7EB;
+    background-color: hsl(220, 13%, 97%);
+    
+}
+
+label input:focus{
+    transition: box-shadow 0.2s ease-in;
+    outline: none;
+    border: 2px solid rgb(93, 93, 255);
+    box-shadow: 0 0px 15px var(--shadow-color);
+}
+
+label input.error{
+    border: 3px solid red;
+}
+
+label::after{
+    content: "* Passwords do not match";
+    color: red;
+    text-transform: none;
+    font-weight: 100;
+    display: none;
+}
+
+label.error::after{
+    display: inline-block;
+}
+
+button{
+    background-color: var(--accent);
+    color: white;
+    font-weight: bold;
+    font-size: 1.25rem;
+    padding: 0.75em 2.5em;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 2.5px 2.5px 15px var(--shadow-color);
+    transition: all 0.3s;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: var(--accent-lighter);
+}
+
+
+.logInOption a{
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/* Small screens */
+@media screen and (max-width:900px) {
+.hero h1{
+    flex-direction: column;
+}
+}
