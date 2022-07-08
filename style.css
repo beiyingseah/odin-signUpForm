@@ -106,22 +106,6 @@ label input:focus{
     box-shadow: 0 0px 15px var(--shadow-color);
 }
 
-label input.error{
-    border: 3px solid red;
-}
-
-label::after{
-    content: "* Passwords do not match";
-    color: red;
-    text-transform: none;
-    font-weight: 100;
-    display: none;
-}
-
-label.error::after{
-    display: inline-block;
-}
-
 button{
     background-color: var(--accent);
     color: white;
@@ -146,8 +130,26 @@ button:hover{
     font-weight: bold;
 }
 
+/* Error Styling */
 
-/* Small screens */
+label input.error{
+    border: 2px solid red;
+}
+
+label::after{
+    content: "* Passwords do not match";
+    color: red;
+    text-transform: none;
+    font-weight: 100;
+    display: none;
+}
+
+label.error::after{
+    display: inline;
+}
+
+
+/* Viewport Handling for Small Screens */
 @media screen and (max-width:900px) {
 .hero h1{
     flex-direction: column;
